@@ -1,0 +1,92 @@
+{% extends "header.html" %}
+{% block body %}
+
+
+
+
+
+
+
+
+
+<div class="jumbotron">
+<div class="container">
+  <h1>Welcome to MovieR!</h1>
+  <p>Provide at least 10 ratings and then get your recommendations.</p>
+</div>
+</div>
+
+<div class="container">
+
+
+
+{% if alg == '1' %}
+    <div class="page-header">
+        <h2 align="center">Currently using User-User Collaborative filtering</h2>
+    </div>
+{% endif %}
+
+{% if alg == '2' %}
+    <div class="page-header">
+        <h2 align="center">Currently using Item-Item Collaborative filtering</h2>
+    </div>
+{% endif %}
+
+
+<h2>List of Movies</h2>
+
+<form action="" method="post" class="form-inline">
+
+    
+    <select name="option" size="10" class="form-control">
+        {% for o in option_list %}
+            <option value="{{o}}">{{o}}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 1
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 2
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 3
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4"> 4
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5"> 5
+                </label>
+                </span>
+                <span class="input-group-btn">
+                    <input class="btn btn-primary" type="submit" value="Submit Rating">
+                </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</form>
+
+<br>
+{% if alg == '1' %}
+<a class="btn btn-success btn-lg" href="/getrecuu" role="button">Give Me My Recommendations</a>
+{% endif %}
+{% if alg == '2' %}
+<a class="btn btn-success btn-lg" href="/getrecii" role="button">Give Me My Recommendations</a>
+{% endif %}
+</div>
+
+
+
+
+
+
+{% endblock %}

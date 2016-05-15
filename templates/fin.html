@@ -1,0 +1,19 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="container" style="padding:2em">
+<div class="page-header">
+<h2>Recommendations for you:</h2>
+</div>
+{% for movie in list %}
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">{{movie[1]}}</li>
+  
+</ul>
+
+{% endfor %}
+
+<form action="" method="post">
+<button type="submit" class="btn btn-primary btn-lg">Give me more!</button>
+</form>
+</div>
+{% endblock %}
