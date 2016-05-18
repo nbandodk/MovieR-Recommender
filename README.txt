@@ -13,3 +13,4 @@ Steps:
 Prerequisites:
 1. Install mongodb and set up data/db folder
 2. Install dependencies (use:pip install -r requirements.txt) and then follow the steps above
+3. Before running any py files above open an instance of 'mongod'
